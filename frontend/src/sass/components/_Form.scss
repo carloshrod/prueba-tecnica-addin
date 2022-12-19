@@ -1,11 +1,15 @@
 .main {
     margin: auto;
     width: 80%;
-    max-width: 500px;
     background-color: var(--dark-color);
     overflow: hidden;
-    padding: 2em 1em;
+    padding: 1.5em 1em;
     border-radius: 1em;
+
+    &--signin {
+        max-width: 500px;
+        padding: 2em 1em;
+    }
 
     span {
         color: var(--primary-color);
@@ -14,6 +18,10 @@
     &__title {
         text-align: center;
         font-size: 2.3rem;
+
+        &--productForm {
+            font-size: 1.5rem;
+        }
     }
 
     &__paragraph {
@@ -128,5 +136,9 @@
 @media (max-width: 768px) {
     .main {
         padding: 1em;
+
+        &__title--productForm {
+                padding-bottom: 0.5rem;
+        }    
     }
 }

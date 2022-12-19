@@ -2,7 +2,6 @@
     display: grid;
     gap: 0.5rem;
     color: #ddd;
-    font-weight: bold;
     text-align: center;
     border: 3px solid var(--dark-color);
     border-radius: 7px;
@@ -40,9 +39,10 @@
 
     &__btnContainer {
         display: grid;
-        grid-template-columns: 20% 20%;
-        justify-content: space-evenly;
+        grid-template-columns: 50% 50%;
+        align-items: center;
         opacity: 0;
+        padding: 0 10%;
     }
 
     &:hover &__btnContainer {
@@ -51,6 +51,7 @@
 
     &__btnContainer button {
         font-size: 14px;
+        margin: auto;
     }
 
     &__btn {
@@ -72,6 +73,14 @@
     }
 
     &__name {
-        font-size: 1rem;
+        display: grid;
+        align-items: center;
+        height: 50px;
+        font-size: 18px;
+        padding: 0 5px;
+    }
+
+    &__price::before {
+        content: "$"
     }
 }

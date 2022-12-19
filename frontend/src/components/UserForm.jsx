@@ -23,7 +23,7 @@ function UserForm({ formTexts }) {
     const { isSending } = useAuthContext();
 
     return (
-        <section className="main">
+        <section className="main main--signin">
             <h2 className="main__title">{title}<span>!</span></h2>
             <p className="main__paragraph">{paragraph1}</p>
             <form className="main__signinForm"

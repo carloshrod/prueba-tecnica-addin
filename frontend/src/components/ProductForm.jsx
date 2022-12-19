@@ -11,16 +11,18 @@ const initialForm = {
 function ProductForm() {
     const { form, handleChange, handleChangeFile,
         pathImage, handleReset, handleSubmit } = useFormProduct({ initialForm });
-    const { setShow, isSending } = useProductsContext();
+    const { productToEdit, setShow, isSending } = useProductsContext();
 
     const closeModal = () => {
         setShow(false);
         handleReset();
     };
 
+    const title = !productToEdit ? "Create Product" : "Edit Product"; 
+
     return (
         <section className="main">
-            <h3>Title</h3>
+            <h3 className='main__title main__title--productForm'>{title}</h3>
             <form className="main__productForm"
                 encType="multipart/form-data"
                 onSubmit={handleSubmit}

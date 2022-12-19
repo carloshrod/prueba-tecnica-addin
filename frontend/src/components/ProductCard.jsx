@@ -40,8 +40,8 @@ function ProductCard({ product }) {
                 </div>
             </div>
             <div className="productCard__name">{productName}</div>
-            <div className="productCard__info">
-                <span>${price}</span>
+            <div className="productCard__price">
+                <span>{price}</span>
             </div>
         </li>
     )

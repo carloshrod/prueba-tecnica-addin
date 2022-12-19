@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Roboto:wght@100;300&display=swap');
+@import '@sweetalert2/theme-dark/dark.scss';
+
+:root {
+    --font-poppins: 'Poppins', sans-serif;
+
+    --primary-color: #20cb84;
+    --dark-color: #18181b;
+    --danger-color: #dc4035;
+    --bg-color: #000000;
+    --toastify-color-success: #20cb84 !important;
+    --toastify-color-error: #dc4035 !important;
+}

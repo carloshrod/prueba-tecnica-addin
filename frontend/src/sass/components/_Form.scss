@@ -1,0 +1,132 @@
+.main {
+    margin: auto;
+    width: 80%;
+    max-width: 500px;
+    background-color: var(--dark-color);
+    overflow: hidden;
+    padding: 2em 1em;
+    border-radius: 1em;
+
+    span {
+        color: var(--primary-color);
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 2.3rem;
+    }
+
+    &__paragraph {
+        text-align: center;
+        margin: .3em 0;
+
+        a {
+            color: var(--primary-color);
+        }
+    }
+
+    &__signinForm {
+        display: grid;
+        justify-items: center;
+        gap: 1.5em;
+        padding: 1em 0;
+    }
+
+    &__productForm {
+        &__topContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__leftContainer {
+            display: grid;
+            justify-items: center;
+            padding: 1em 0 1em 1.5em;
+        }
+
+        &__rightContainer {
+            display: grid;
+            justify-items: center;
+            gap: 1.5em;
+            padding: 1em 0;
+        }
+
+        &__bottomContainer {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            &__topContainer {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            &__leftContainer {
+                display: grid;
+                justify-items: center;
+                padding: 0;
+            }    
+            &__bottomContainer {
+                padding-top: 0;
+                justify-content: space-around;
+            }    
+        }
+    }
+
+    &__image {
+        height: 200px;
+        width: 200px;
+        background-color: #ddd;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    &__upload {
+        border-radius: 5px;
+        background-color: var(--dark-color);
+        display: inline-block;
+        cursor: pointer;
+        padding: 0 0.7rem;
+        margin: 0.5rem 0 0 0;
+
+        &:hover {
+            background-color: var(--primary-color);
+        }
+        &:hover i {
+            color: #ddd;
+        }
+    }
+
+    &__icon {
+        color: #ddd;
+    }
+
+    &__input {
+        width: 80%;
+        max-width: 300px;
+        outline: none;
+        border-radius: .6em;
+
+        &--file {
+            cursor: pointer;
+        }
+    }
+
+    &__input--send {
+        width: 80%;
+        max-width: 100px;
+    }
+
+    &__input--cancel {
+        background-color: var(--danger-color);
+        width: 80%;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 1em;
+    }
+}

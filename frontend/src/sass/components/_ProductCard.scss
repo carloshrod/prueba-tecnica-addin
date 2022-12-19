@@ -1,0 +1,76 @@
+.productCard {
+    display: grid;
+    gap: 0.5rem;
+    color: #ddd;
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid var(--dark-color);
+    border-radius: 7px;
+    background-color: var(--dark-color);
+    padding-bottom: 0.5rem;
+    width: 250px;
+
+    &:hover {
+        cursor: default;
+        border: 3px solid var(--primary-color);
+    }
+
+    &__image {
+        height: 300px;
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &:hover &__image {
+        opacity: 0.5;
+    }
+
+    &__options {
+        display: inline-block;
+        position: relative;
+    }
+
+    &__options &__btnContainer {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+    }
+
+    &__btnContainer {
+        display: grid;
+        grid-template-columns: 20% 20%;
+        justify-content: space-evenly;
+        opacity: 0;
+    }
+
+    &:hover &__btnContainer {
+        opacity: 1;
+    }
+
+    &__btnContainer button {
+        font-size: 14px;
+    }
+
+    &__btn {
+        width: 2.5rem;
+        color: var(--dark-color);
+        border-radius: 7px;
+        background-color: #ddd;
+        padding: 0.5rem;
+
+        &--edit:hover{
+            color: #ddd;
+            background-color: var(--primary-color);
+        }
+
+        &--delete:hover{
+            color: #ddd;
+            background-color: var(--danger-color);
+        }
+    }
+
+    &__name {
+        font-size: 1rem;
+    }
+}

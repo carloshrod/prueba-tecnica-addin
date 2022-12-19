@@ -1,0 +1,29 @@
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    justify-content: center;
+}
+
+.addButtonContainer {
+    padding: 1rem 1rem 0 1rem;
+
+    button {
+        min-width: 140px;
+        outline: none;
+        border-radius: .6em;
+    }
+}
+
+.noData {
+    width: 100%;
+    position: relative;
+    top: 25%;
+    font-size: 3rem;
+    text-align: center;
+    background-color: var(--dark-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 2rem;
+}

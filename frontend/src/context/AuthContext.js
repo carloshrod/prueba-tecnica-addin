@@ -4,6 +4,7 @@ import { config } from "../config";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 const { API_URL } = config;
 const { LOGIN, SIGNUP } = config.AUTH_API;
@@ -77,9 +78,21 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    const logout = () => {
-        localStorage.removeItem("token");
-        navigate("/");
+    const logout = async () => {
+        const resConfirm = await Swal.fire({
+            icon: "question",
+            text: "Are you sure to sign out?",
+            showCancelButton: true,
+            confirmButtonColor: '#20cb84',
+            cancelButtonColor: '#dc4035',
+            confirmButtonText: 'Accept',
+            width: "18em"
+        });
+        if (resConfirm.isConfirmed) {
+            localStorage.removeItem("token");
+            toast.success("Come back soon!", {position: "top-center"});
+            navigate("/");
+        }
     }
 
     const data = { payload, auth, signup, login, logout, isSending };

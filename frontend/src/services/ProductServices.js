@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import Swal from 'sweetalert2/dist/sweetalert2.js';import { config } from "../config";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { config } from "../config";
 import { useProductsContext } from "../context/ProductsContext";
 
 const { API_URL, PRODUCTS_API } = config;
@@ -51,12 +52,13 @@ export const ProductServices = () => {
     const deleteProduct = async (productId) => {
         try {
             const resConfirm = await Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                icon: "warning",
+                html: `Are you sure to delete this product? <br> You won't be able to revert this!`,
                 showCancelButton: true,
                 confirmButtonColor: '#20cb84',
                 cancelButtonColor: '#dc4035',
-                confirmButtonText: 'Accept'
+                confirmButtonText: 'Accept',
+                width: "24em",
             });
             if (resConfirm.isConfirmed) {
                 const res = await axios.delete((baseURL + productId), options);

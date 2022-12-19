@@ -1,5 +1,6 @@
 const { userModel } = require("../models/user.model");
 const { productModel } = require("../models/product.model");
+const fs = require('fs-extra');
 
 exports.verifyExistingUser = async (req, res, next) => {
     try {
@@ -19,6 +20,8 @@ exports.verifyExistingProduct = async (req, res, next) => {
         const { productName } = req.body;
         const foundProduct = await productModel.findOne({ productName });
         if (foundProduct) {
+            const { tempFilePath } = req.files?.file;
+            await fs.unlink(tempFilePath);
             return res.status(400).json({ msg: "Product already exists!" });
         }
         next();

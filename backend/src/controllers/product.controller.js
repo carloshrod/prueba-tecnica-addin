@@ -44,7 +44,7 @@ exports.updateProduct = async (req, res, next) => {
 
         await productToEdit.updateOne({ $set: data });
         const updatedProducts = await productModel.find();
-        return res.status(200).send({ updatedProducts, msg: "Product updated successfully" });
+        return res.status(200).send({ updatedProducts, msg: "Product updated successfully!" });
     } catch (error) {
         next(error);
     }

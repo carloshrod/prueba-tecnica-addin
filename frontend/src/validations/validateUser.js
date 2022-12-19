@@ -22,7 +22,7 @@ export const validateUser = (form) => {
         return;
     }
     if (!regexPass.test(form.password)) {
-        toastValidate("Password should contain at least 8 characters, a uppercase, a lowercase, a number and a special character!");
+        toastValidate("Password should contain at least 8 characters, an uppercase, a lowercase, a number and a special character!");
         return;
     }
     return true;

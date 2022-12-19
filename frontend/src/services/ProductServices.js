@@ -17,9 +17,14 @@ export const ProductServices = () => {
             setIsSending(true);
             const res = await axios.post(baseURL, data, options);
             const { savedProduct, msg } = res.data;
-            setProducts([...products, savedProduct]);
+            if (products.length > 0) {
+                setProducts([...products, savedProduct]);
+            } else {
+                setProducts([savedProduct])
+            }
             toast.success(msg);
         } catch (error) {
+            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
             console.log(error);
         } finally {
             setIsSending(false);
@@ -35,6 +40,7 @@ export const ProductServices = () => {
             setProducts(updatedProducts);
             toast.success(msg);
         } catch (error) {
+            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
             console.log(error);
         } finally {
             setIsSending(false);
@@ -59,6 +65,7 @@ export const ProductServices = () => {
                 toast.success(res.data.msg);
             }
         } catch (error) {
+            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
             console.log(error);
         }
     }

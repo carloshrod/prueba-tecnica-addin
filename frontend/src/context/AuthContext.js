@@ -11,8 +11,8 @@ const { LOGIN, SIGNUP } = config.AUTH_API;
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-    const navigate = useNavigate();
     const [isSending, setIsSending] = useState(false);
+    const navigate = useNavigate();
 
     const getAuth = () => {
         try {

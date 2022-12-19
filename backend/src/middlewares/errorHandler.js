@@ -5,6 +5,8 @@ const ERRORS = {
 
     TokenExpirerError: (res) => res.status(401).json({ msg: 'Token expired!' }),
 
+    MongoServerError: (res) => res.status(400).json({ msg: 'MongoDB error!' }),
+
     defaultError: (res, error) => {
         console.error(error.name)
         res.status(500).end()

@@ -55,7 +55,7 @@ export const useFormProduct = ({ initialForm }) => {
         }, 1000);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateProduct(form, productToEdit, file)) {
             const formData = new FormData();
@@ -63,12 +63,13 @@ export const useFormProduct = ({ initialForm }) => {
             formData.append("price", form.price);
             formData.append("description", form.description);
             formData.append("file", file);
+            
             if (!productToEdit) {
-                createProduct(formData);
+                await createProduct(formData);
                 handleReset();
             } else {
                 const productId = productToEdit._id;
-                editProduct(formData, productId);
+                await editProduct(formData, productId);
                 handleReset();
             }
         }

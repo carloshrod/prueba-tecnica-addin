@@ -1,9 +1,10 @@
 import { useProductsContext } from '../context/ProductsContext';
+import Loader from './Loader';
 import Modal from './Modal';
 import ProductCard from './ProductCard';
 
 function ProductsGrid() {
-    const { products, setShow } = useProductsContext();
+    const { products, setShow, isLoading } = useProductsContext();
 
     const showModal = () => setShow(true);
 
@@ -23,9 +24,15 @@ function ProductsGrid() {
                     ))}
                 </ul>
                 :
-                <div className="noData">
-                    <span>No data. Please start to add products!</span>
-                </div>
+                <>
+                    {isLoading
+                        ? <Loader />
+                        :
+                        <div className="noData">
+                            <span>Please start to add products!</span>
+                        </div >
+                    }
+                </>
             }
             <Modal />
         </>

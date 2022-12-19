@@ -23,7 +23,7 @@ const ProductsProvider = ({ children }) => {
                 if (auth) {
                     const res = await axios.get(API_URL + "products");
                     setProducts(res.data);
-                    if (res.data.msg) toast.error(res.data.msg, { theme: "colored", autoClose: false });
+                    if (res.data.msg) toast.error(res.data.msg, { theme: "colored" });
                 }
             } catch (error) {
                 toast.error(error.message, { theme: "colored", autoClose: false })

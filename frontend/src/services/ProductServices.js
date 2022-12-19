@@ -24,7 +24,7 @@ export const ProductServices = () => {
             }
             toast.success(msg);
         } catch (error) {
-            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
+            toast.error(error.response?.data?.msg || error.message, { position: "bottom-center" });
             console.log(error);
         } finally {
             setIsSending(false);
@@ -40,7 +40,7 @@ export const ProductServices = () => {
             setProducts(updatedProducts);
             toast.success(msg);
         } catch (error) {
-            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
+            toast.error(error.response?.data?.msg || error.message, { position: "bottom-center" });
             console.log(error);
         } finally {
             setIsSending(false);
@@ -65,7 +65,7 @@ export const ProductServices = () => {
                 toast.success(res.data.msg);
             }
         } catch (error) {
-            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
+            toast.error(error.response?.data?.msg || error.message, { position: "bottom-center" });
             console.log(error);
         }
     }

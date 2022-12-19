@@ -33,6 +33,7 @@ const AuthProvider = ({ children }) => {
 
     const signup = async (form) => {
         try {
+            setIsSending(true);
             const res = await axios.post(API_URL + SIGNUP, form);
             if (res) {
                 const { token, username } = res.data;
@@ -46,8 +47,10 @@ const AuthProvider = ({ children }) => {
                 navigate("/products");
             }
         } catch (error) {
-            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
+            toast.error(error.response?.data?.msg || error.message, { position: "bottom-center" });
             console.error(error);
+        } finally {
+            setIsSending(false);
         }
     }
 
@@ -67,7 +70,7 @@ const AuthProvider = ({ children }) => {
                 navigate("/products");
             }
         } catch (error) {
-            toast.error(error.response.data.msg || "Network error!", { position: "bottom-center" });
+            toast.error(error.response?.data?.msg || error.message, { position: "bottom-center" });
             console.error(error);
         } finally {
             setIsSending(false);

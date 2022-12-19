@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
-import { validateUser } from "../validations/validateUser";
+import { validateLogin, validateUser } from "../validations/validateUser";
 
 export const useFormUser = ({ initialForm }) => {
     const [form, setForm] = useState(initialForm);
@@ -23,7 +23,9 @@ export const useFormUser = ({ initialForm }) => {
 
     const handleSubmitLogin = (e) => {
         e.preventDefault();
-        login(form);
+        if (validateLogin(form)) {
+            login(form);
+        }
     };
 
     return {

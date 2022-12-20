@@ -5,7 +5,7 @@ function Container({ children }) {
     const {pathname} = useLocation();
 
     return (
-        <main className={`container ${pathname !== "/products" && "container--login"}`}>
+        <main className={`container ${pathname !== "/products" ? "container--login" : ""}`}>
             {children}
         </main>
     )

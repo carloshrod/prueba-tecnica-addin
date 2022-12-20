@@ -20,10 +20,15 @@ textarea {
     border: 2px solid #ddd;
     background-color: #ddd;
     padding: 0.4rem 1.5rem;
+    resize: none;
 
     &:focus {
         border: 2px solid var(--primary-color);
     }
+}
+
+input {
+    height: 36.78px;
 }
 
 input[type="file"] {
@@ -55,7 +60,7 @@ button {
 }
 
 .swal2-popup {
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
 
     .swal2-icon.swal2-warning {
         font-size: .7rem !important;

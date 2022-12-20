@@ -18,7 +18,7 @@ function ProductForm() {
         handleReset();
     };
 
-    const title = !productToEdit ? "Create Product" : "Edit Product"; 
+    const title = !productToEdit ? "Create Product" : "Edit Product";
 
     return (
         <section className="main">
@@ -30,16 +30,16 @@ function ProductForm() {
             >
                 <div className="main__productForm__topContainer">
                     <div className="main__productForm__leftContainer">
-                        <img src={pathImage} alt="poster" className="main__image" />
-                        <label className="main__upload">
-                            <input
-                                className="main__input main__input--file"
-                                name="file"
-                                type="file"
-                                onChange={handleChangeFile}
-                            />
-                            <i className="fa-solid fa-upload main__icon" />
-                        </label>
+                            <img src={pathImage} alt="poster" className="main__productForm__leftContainer__image" />
+                            <label className="main__productForm__leftContainer__upload">
+                                <input
+                                    className="main__input main__input--file"
+                                    name="file"
+                                    type="file"
+                                    onChange={handleChangeFile}
+                                />
+                                <i className="fa-solid fa-upload main__productForm__leftContainer__icon"/>
+                            </label>
                     </div>
                     <div className="main__productForm__rightContainer">
                         <input
@@ -71,13 +71,13 @@ function ProductForm() {
                 </div>
                 <div className="main__productForm__bottomContainer">
                     <button className="main__input main__input--cancel" type="button" onClick={closeModal}>
-                        Cancel
+                        Close
                     </button>
                     <button className="main__input main__input--send">
-                    {isSending
-                        ? <i className="fa-solid fa-spinner fa-lg fa-spin" />
-                        : "Send"
-                    }
+                        {isSending
+                            ? <i className="fa-solid fa-spinner fa-lg fa-spin" />
+                            : "Send"
+                        }
                     </button>
                 </div>
             </form>
